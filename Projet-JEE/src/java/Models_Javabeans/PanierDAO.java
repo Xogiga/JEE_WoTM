@@ -25,8 +25,8 @@ public class PanierDAO extends DAO_AccessDB{
      * @throws SQLException 
      */
     public void addProduit(Statement stmt,int idPanier, int idClient,int idProduit, int prix) throws SQLException{
-        idPanier = numPanier(stmt);
-        int result = stmt.executeUpdate("INSERT INTO Panier(numPanier,idClient, idProduit, prix) VALUES ("+idPanier+","+idClient+","+idProduit+","+prix+")");
+        idPanier = idPanier(stmt);
+        int result = stmt.executeUpdate("INSERT INTO Panier(idPanier,idClient, idProduit, prix) VALUES ("+idPanier+","+idClient+","+idProduit+","+prix+")");
         
     }
     
@@ -36,22 +36,22 @@ public class PanierDAO extends DAO_AccessDB{
      * @return Le numéro du panier auto incrémenté de 1 en int
      * @throws SQLException 
      */
-    public int numPanier(Statement stmt) throws SQLException{
-        ResultSet result = stmt.executeQuery("SELECT max(numPanier) AS numPanier FROM Panier");
+    public int idPanier(Statement stmt) throws SQLException{
+        ResultSet result = stmt.executeQuery("SELECT max(idPanier) AS idPanier FROM Panier");
         String numString = null;
-        int numPanier;
+        int idPanier;
         while(result.next()){
-            numString = result.getString("numPanier");
+            numString = result.getString("idPanier");
         }
         //Si la table est vide on met 0
         if(numString == null){
-            numPanier = 0;
+            idPanier = 0;
         }
         else{
             //On passe le String en Int
-            numPanier = Integer.decode(numString);
+            idPanier = Integer.decode(numString);
         }
-        return numPanier;
+        return idPanier;
     }
     
     /**
@@ -63,12 +63,12 @@ public class PanierDAO extends DAO_AccessDB{
      * @throws SQLException 
      */
     public int[] getidProduit(Statement stmt,int idClient,int idPanier) throws SQLException{
-        ResultSet resultLigne = stmt.executeQuery("SELECT count(idProduit) AS nbLignes FROM Panier WHERE idClient="+idClient+" AND numPanier="+idPanier);
+        ResultSet resultLigne = stmt.executeQuery("SELECT count(idProduit) AS nbLignes FROM Panier WHERE idClient="+idClient+" AND idPanier="+idPanier);
         int nbLignes = 0;
         while(resultLigne.next()){
             nbLignes = resultLigne.getInt("nbLignes");
         }
-        ResultSet result = stmt.executeQuery("SELECT idProduit FROM Panier WHERE idClient="+idClient+" AND numPanier="+idPanier);
+        ResultSet result = stmt.executeQuery("SELECT idProduit FROM Panier WHERE idClient="+idClient+" AND idPanier="+idPanier);
         int i=0;
         int tab[] = new int[nbLignes];
         while(result.next()){
@@ -90,7 +90,7 @@ public class PanierDAO extends DAO_AccessDB{
      */
     public int prixTotalPanier(Statement stmt,int idClient,int idPanier) throws SQLException{
         int total = 0;
-        ResultSet resutl = stmt.executeQuery("SELECT prix FROM Panier WHERE idClient="+idClient+" AND numPanier="+idPanier);
+        ResultSet resutl = stmt.executeQuery("SELECT prix FROM Panier WHERE idClient="+idClient+" AND idPanier="+idPanier);
         while(resutl.next()){
             int tempo = resutl.getInt("prix");
             total = total + tempo;
