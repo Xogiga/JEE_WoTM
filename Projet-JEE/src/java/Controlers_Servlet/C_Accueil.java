@@ -65,7 +65,7 @@ public class C_Accueil extends HttpServlet {
             ClientDAO cli = new ClientDAO(url, user, pw);
             Statement stmt = co.createStatement(con);
             ProduitDAO prduit = new ProduitDAO(url, user,pw);
-            int idMax = cmd.numPanier(stmt);
+            int idMax = cmd.idPanier(stmt);
             int idCli = cli.getidClient(stmt, user, pw);
             int idProd = prduit.getIdProduit(stmt, "Illidan");
             int prixprod = prduit.getPrix(stmt, idProd);
