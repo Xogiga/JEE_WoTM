@@ -1,0 +1,33 @@
+SMAP
+Accueil_jsp.java
+JSP
+*S JSP
+*F
++ 0 Accueil.jsp
+Views_JSP/Accueil.jsp
++ 1 V_Header.jsp
+Views_JSP/./V_Header.jsp
++ 2 V_Menu.jsp
+Views_JSP/././V_Menu.jsp
+*L
+1,4:60
+1#1,32:63
+5#2,9:94
+14,2:103,3
+16,30:109
+4#0,15:139
+18:218,5
+18:156
+19:157,3
+20,4:160
+24:164,3
+25,4:167
+29:171,3
+30,4:174
+33:236,5
+33:180
+34:181,3
+35,6:184
+41:190,6
+42,4:196
+*E
