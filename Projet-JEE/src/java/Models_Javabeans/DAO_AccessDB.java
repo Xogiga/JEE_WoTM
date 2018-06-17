@@ -8,10 +8,34 @@ import java.sql.Statement;
 
 public class DAO_AccessDB {
     
-    private String url ;
-    private String user;
-    private String pwd;
+    private String url = "jdbc:mariadb://iutdoua-web.univ-lyon1.fr/p1623107";
+    private String user = "p1623107";
+    private String pwd = "288357";
     private static Connection con = null;
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public String getPwd() {
+        return pwd;
+    }
+
+    public void setPwd(String pwd) {
+        this.pwd = pwd;
+    }
     
     public DAO_AccessDB(){ 
     }

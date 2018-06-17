@@ -13,6 +13,10 @@ public class CommandeDAO extends DAO_AccessDB{
     public CommandeDAO(String newUrl, String newUser, String newMdp) {
         super(newUrl, newUser, newMdp);
     }
+
+    public CommandeDAO() {
+        
+    }
     
     /**
      * Crée une nouvelle commande
