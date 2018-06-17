@@ -21,21 +21,32 @@
             </tr>
             <tr style="border: solid grey 2px;margin:1.5px;color: white">
                 <td style="border: solid lightgrey 2px; padding: 2px">
-                    Tide Pods
+                    Illidan
                 </td>
                 <td style="border: solid lightgrey 2px; padding: 2px">
-                    489 513 €
+                    1 300 €
                 </td>
                 <td style="border: solid lightgrey 2px; padding: 2px">
-                    x10
+                    x2
                 </td>
             </tr>
             <tr style="border: solid grey 2px;margin:1.5px;color: white">
                 <td style="border: solid lightgrey 2px; padding: 2px">
-                    Pomme
+                    Sylvanas
                 </td>
                 <td style="border: solid lightgrey 2px; padding: 2px">
-                    1 €
+                    600 €
+                </td>
+                <td style="border: solid lightgrey 2px; padding: 2px">
+                    x1
+                </td>
+            </tr>
+            <tr style="border: solid grey 2px;margin:1.5px;color: white">
+                <td style="border: solid lightgrey 2px; padding: 2px">
+                    Arthas
+                </td>
+                <td style="border: solid lightgrey 2px; padding: 2px">
+                    750 €
                 </td>
                 <td style="border: solid lightgrey 2px; padding: 2px">
                     x1
@@ -43,7 +54,7 @@
             </tr>
         </table>
         <div>
-            <p style="position: relative; right : 0;">Prix total :4 895 131€
+            <p style="position: relative; right : 0;">   Prix total : 2 650 €
         </div>
     </body>
 </html>

@@ -16,13 +16,13 @@
                     N°Commande
                 </td>
                 <td style="padding:2px;border:0;border-bottom:1px dotted #BDB76B;border:solid lightgrey">
-                    Montant total de la commande
+                    Montant total
                 </td>
                 <td style="padding:2px;border:0;border-bottom:1px dotted #BDB76B;border:solid lightgrey">
-                    Date de la commande
+                    Date
                 </td>
                 <td style="padding:2px;border:0;border-bottom:1px dotted #BDB76B;border:solid lightgrey">
-                    L'état de la commande
+                    Etat
                 </td>
                 <td style="padding:2px;border:0;border-bottom:1px dotted #BDB76B;border:solid lightgrey">
                     Date de livraison
@@ -36,7 +36,7 @@
                     <a href="./V_Panier.jsp">n°1711242337ZKZUQ</a>
                 </td>
                 <td style="border: solid lightgrey 2px; padding: 2px">
-                    4 895 131€
+                    2650 €
                 </td>
                 <td style="border: solid lightgrey 2px; padding: 2px">
                     19/03/2018

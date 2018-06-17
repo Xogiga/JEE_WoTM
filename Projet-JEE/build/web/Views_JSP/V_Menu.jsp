@@ -13,7 +13,7 @@
                 </li>
                 <li>
                     <a href="./V_Articles.jsp">
-                        Liste des articles
+                        Magasin
                     </a>
                 </li>
                 <li>

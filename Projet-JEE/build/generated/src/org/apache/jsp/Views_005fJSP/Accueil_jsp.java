@@ -62,8 +62,6 @@ public final class Accueil_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<!DOCTYPE html>\n");
       out.write("\n");
       out.write("<!DOCTYPE html>\n");
-      out.write("<!-- Menu -->\n");
-      out.write("\n");
       out.write("<html>\n");
       out.write("\t<head>\n");
       out.write("            <title>World of Trackmania</title>\n");
@@ -91,8 +89,6 @@ public final class Accueil_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t</header>\n");
       out.write("        </body>\n");
       out.write("</html>\n");
-      out.write("\n");
-      out.write("\n");
       out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
@@ -143,13 +139,13 @@ public final class Accueil_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <title>Inscription</title>\n");
       out.write("        <link type=\"text/css\" rel=\"stylesheet\" href=\"form.css\" />\n");
       out.write("    </head>\n");
-      out.write("    <body>\n");
+      out.write("    <body background=\"../Images/fond2.png\">\n");
       out.write("        <form method=\"post\" action=\"V_Articles.jsp\" style=\"margin:15px;\">\n");
       out.write("            <fieldset>\n");
       out.write("                <legend>Inscription</legend>\n");
       out.write("                <p>Vous pouvez vous inscrire via ce formulaire.</p>\n");
       out.write("\n");
-      out.write("                <label for=\"email\">Adresse email <span class=\"requis\">*</span></label><br>\n");
+      out.write("                <label for=\"email\">Mail <span class=\"requis\">*</span></label><br>\n");
       out.write("                <input type=\"email\" id=\"email\" name=\"email\" value=\"");
       if (_jspx_meth_c_out_0(_jspx_page_context))
         return;
