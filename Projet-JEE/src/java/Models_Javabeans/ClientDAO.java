@@ -12,6 +12,10 @@ public class ClientDAO extends DAO_AccessDB{
     public ClientDAO(String newUrl, String newUser, String newMdp) {
         super(newUrl, newUser, newMdp);
     }
+
+    public ClientDAO() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
     /**
@@ -82,7 +86,7 @@ public class ClientDAO extends DAO_AccessDB{
      * @param stmt La statement jdbc
      * @param username le nom d'utilisateur passé en paramètre
      * @param pwd le mot de passe utilisateur passé en paramètre
-     * @return String "Connexion validée" si les identifiants sont bons, l'valide correspondante sinon
+     * @return String "Connexion validée" si les identifiants sont bons, l'erreur correspondante sinon
      * @throws SQLException 
      */
     public String nbLigneConnexion(Statement stmt,String username,String pwd) throws SQLException{

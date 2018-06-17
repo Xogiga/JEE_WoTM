@@ -5,8 +5,16 @@
  */
 package Controlers_Servlet;
 
+import Models_Javabeans.ClientDAO;
+import Models_Javabeans.DAO_AccessDB;
+import Models_Javabeans.PanierDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,39 +29,6 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "C_Connexion", urlPatterns = {"/C_Connexion"})
 public class C_Connexion extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            RequestDispatcher dispatch = request.getRequestDispatcher("./Views_JSP/V_Connexion.jsp"); 
-            dispatch.include(request, response);
-        }
-    }
-
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
 
     /**
      * Handles the HTTP <code>POST</code> method.
@@ -66,7 +41,22 @@ public class C_Connexion extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        ClientDAO cli = new ClientDAO();
+        DAO_AccessDB co = new DAO_AccessDB();
+        String url = co.getUrl();
+        String user = co.getUser();
+        String pw = co.getPwd();
+        Connection con;
+        try {
+            con = co.createConnexion(url,user,pw);
+            Statement stmt = co.createStatement(con);
+            String users = cli.getIdentifiant(stmt, 0);
+            if(cli.nbLigneConnexion(stmt, user, pw)=="Connexion validée"){
+                //Affichage des produis
+            }
+        }catch (SQLException ex) {
+            Logger.getLogger(C_Connexion.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -76,7 +66,7 @@ public class C_Connexion extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "Short description";
+        return "Verification de la connexion";
     }// </editor-fold>
 
 }
